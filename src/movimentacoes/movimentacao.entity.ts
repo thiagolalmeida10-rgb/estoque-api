@@ -1,10 +1,10 @@
 import { Produto } from "src/produtos/produto.entity";
-import { Column, Entity, ManyToOne, PrimaryColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Movimentacao{
 
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     id:number
 
     @Column()

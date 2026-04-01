@@ -29,5 +29,4 @@ export class ProdutosService {
         return this.produtoRepository.delete({id})
     }
 
-
 }
