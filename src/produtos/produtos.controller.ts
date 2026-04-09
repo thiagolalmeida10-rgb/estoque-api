@@ -1,7 +1,9 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { ProdutosService } from './produtos.service';
 import { CreateProdutoDto } from './dto/CreateProdutoDTO';
+import { JwtAuthGuard } from 'src/auth/jwt.auth.guard';
 
+@UseGuards(JwtAuthGuard)
 @Controller('produtos')
 export class ProdutosController {
 

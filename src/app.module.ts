@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProdutosModule } from './produtos/produtos.module';
 import { MovimentacoesModule } from './movimentacoes/movimentacoes.module';
+import { AuthModule } from './auth/auth.module';
+import { JwtStrategy } from './auth/jwt.strategy';
 
 
 @Module({
@@ -16,8 +18,8 @@ import { MovimentacoesModule } from './movimentacoes/movimentacoes.module';
     database: 'estoque_db',
     autoLoadEntities: true,
     synchronize: true
-  }), ProdutosModule, MovimentacoesModule],
+  }), ProdutosModule, MovimentacoesModule, AuthModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, JwtStrategy],
 })
 export class AppModule {}
